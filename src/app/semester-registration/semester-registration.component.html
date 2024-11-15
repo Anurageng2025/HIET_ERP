@@ -1,0 +1,166 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+    <div class="navbar">
+        <div style="font-size: 29px; font-weight: 600;"><img style="border-radius: 50%; margin-left: 40px;"
+                src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px">
+            || Hi-Tech Institute of Engineering and Technology</div>
+        <div style="margin-right: 20px; display: flex;"><button
+                style="padding: 5px; border-radius: 5px; border-color: transparent;" (click)="logout()">LogOut</button></div>
+    </div>
+  <div class="form_wrapper">
+    <div class="form_container">
+      <div class="title_container">
+        <h2>Semester Registration Form</h2>
+      </div>
+      <div class="row clearfix">
+        <div class="">
+          <form [formGroup]="semesterRegistrationForm" (ngSubmit)="onSubmit()">
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="email" formControlName="email" placeholder="Email" required [readOnly]="true"  />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone rotate-icon"></i></span>
+                  <input type="text" formControlName="mobile" pattern="[1-9]{1}[0-9]{9}" maxlength="10" placeholder="Mobile No." required >
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-tasks "></i></span>
+                  <input type="text" formControlName="roll_number" pattern="[1-9]{1}[0-9]{9}" maxlength="13" placeholder="Roll Number" required [readOnly]="true" >
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-tasks "></i></span>
+                  <input type="text" formControlName="student_id" maxlength="10" placeholder="Student ID" required [readOnly]="true" >
+                </div>
+              </div>
+              <!-- <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" formControlName="password" placeholder="Password" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input type="password" formControlName="confirm_password" placeholder="Confirm Password" required />
+                </div>
+              </div> -->
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" formControlName="first_name" placeholder="First Name" [readOnly]="true"  />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
+                  <input type="text" formControlName="last_name" placeholder="Last Name" required [readOnly]="true"  />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-calendar "></i></span>
+                  <input type="date" formControlName="dob" placeholder="Date of Birth" required>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="false" class="fa fa-user"></i></span>
+                  <input type="text" formControlName="father_name" placeholder="Father's Name" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="false" class="fa fa-user"></i></span>
+                  <input type="text" formControlName="mother_name" placeholder="Mother's Name" required />
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-phone rotate-icon"></i></span>
+                  <input type="text" formControlName="parent_mobile" pattern="[1-9]{1}[0-9]{9}" maxlength="10" placeholder="Parent's Mobile No." required>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i class="fa-solid fa-credit-card"></i></span>
+                  <input type="number" formControlName="aadhar_card" maxlength="12" placeholder="Aadhar Card No." required>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i class="fa-solid fa-droplet"></i></span>
+                  <input type="text" formControlName="blood_group" maxlength="3" placeholder="Blood Group" required>
+                </div>
+              </div>
+            </div>
+          
+            <div class="input_field radio_option">
+              <input type="radio" formControlName="gender" id="rd1" value="Male">
+              <label for="rd1" style="font-size: 15px;">Male</label>
+              <input type="radio" formControlName="gender" id="rd2" value="Female">
+              <label for="rd2" style="font-size: 15px;">Female</label>
+            </div>
+          
+            <div class="row clearfix">
+              <div class="col_half">
+                <div class="input_field select_option">
+                  <select formControlName="course" (change)="Refresh()">
+                    <option value="">Select Course</option>
+                    <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+                    <!-- <option value="BCA">BCA</option>
+                    <option value="BBA">BBA</option>
+                    <option value="B.Com>">B.Com</option> -->
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field select_option">
+                  <select formControlName="branch">
+                    <option value="">Select Branch</option>
+                    <option *ngFor="let branch of branches" [value]="branch">{{ branch }}</option>
+                    <!-- <option value="EE">EE</option>
+                    <option value="EC">EC</option>
+                    <option value="ME">ME</option> -->
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field select_option">
+                  <select formControlName="semester">
+                    <option value="">Select Semester</option>
+                    <option *ngFor="let semester of semesters" [value]="semester">{{ semester }}</option>
+
+                    <!-- <option value="2">2nd</option>
+                    <option value="3">3rd</option>
+                    <option value="4">4th</option>
+                    <option value="5">5th</option>
+                    <option value="6">6th</option>
+                    <option value="7">7th</option>
+                    <option value="8">8th</option> -->
+                  </select>
+                  <div class="select_arrow"></div>
+                </div>
+              </div>
+              <div class="col_half">
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-bookmark "></i></span>
+                  <input type="text" formControlName="cgpa" maxlength="4" placeholder="Current Percentage/CGPA" required>
+                </div>
+              </div>
+              <div class="form-group">
+                
+                <label for="profilePicture" style="font-size: 17px; margin-bottom: 20px; "> <i class="fa-solid fa-square-poll-vertical"></i> Result : &nbsp; &nbsp;</label>
+                <input type="file" id="profilePicture" name="profilePicture" (change)="onFileSelect($event)" />
+                            </div>
+              <!-- <div class="form-group">
+                <label for="signature">Signature:</label>
+                <input type="file" id="signature" (change)="onFileSelect($event, 'signature')" />
+              </div> -->
+            </div>
+           
+            <button type="submit" class="registerButton" > Semester Register</button>          </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <p class="credit">Developed by <a href="https://www.linkedin.com/in/anurag-4b104124a/" target="_blank">Design the way</a></p> -->
+</body>

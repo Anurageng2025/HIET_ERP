@@ -1,0 +1,128 @@
+<!-- <div class="grievance-container">
+    <h2>Register a Complaint</h2>
+    <form [formGroup]="grievanceForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="student_Id">Student ID</label>
+            <input id="student_Id" formControlName="student_Id" class="form-control" [readOnly]="true" />
+            <div *ngIf="f['student_Id'].touched && f['student_Id'].invalid" class="error">
+              Name is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="studentEmail">Email</label>
+            <input id="studentEmail" formControlName="email" class="form-control" />
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="error">
+              Valid email is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" formControlName="subject" class="form-control" />
+            <div *ngIf="f['subject'].touched && f['subject'].invalid" class="error">
+              Subject is required.
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="complaint">Complaint</label>
+            <textarea id="complaint" formControlName="complaint" class="form-control"></textarea>
+            <div *ngIf="f['complaint'].touched && f['complaint'].invalid" class="error">
+              Complaint details are required.
+            </div>
+          </div>
+          
+      
+      <button type="submit" class="btn btn-primary" [disabled]="grievanceForm.invalid">Submit</button>
+    </form>
+  </div>
+   -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+   <body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="../../assets/images/hitech_Logo.jpeg" alt="Hi-Tech Logo" class="logo">
+            Hi-Tech Institute of Engineering and Technology
+        </div>
+        <div class="navbar-actions">
+            <button class="navbar-button" (click)="toggleComplaints()" *ngIf="!mycomplaintsVisible"><i class="fas fa-exclamation-circle"></i> My Complaints</button>
+            <button class="navbar-button" (click)="toggleComplaints()" *ngIf="mycomplaintsVisible"><img src="../../assets/images/register.png" alt="" height="25px" > Register Complaints</button>
+            <button class="logout-button" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </div>
+    
+
+   <div class="container" *ngIf="!mycomplaintsVisible">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm">
+          <div class="card-header text-white" style="background-color: #161D39;">
+            <h4 class="mb-0">Register a Complaint</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="grievanceForm" (ngSubmit)="onSubmit()">
+              <div class="mb-3">
+                <label for="student_Id" class="form-label">Name</label>
+                <input id="student_Id" formControlName="student_Id" class="form-control" placeholder="Enter your name" />
+                <div *ngIf="f['student_Id'].touched && f['student_Id'].invalid" class="invalid-feedback d-block">
+                  Name is required.
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="studentEmail" class="form-label">Email</label>
+                <input id="studentEmail" formControlName="email" class="form-control" placeholder="Enter your email" />
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="invalid-feedback d-block">
+                  A valid email is required.
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input id="subject" formControlName="subject" class="form-control" placeholder="Subject of your complaint" />
+                <div *ngIf="f['subject'].touched && f['subject'].invalid" class="invalid-feedback d-block">
+                  Subject is required.
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="complaint" class="form-label">Complaint</label>
+                <textarea id="complaint" formControlName="complaint" class="form-control" rows="4" placeholder="Describe your complaint"></textarea>
+                <div *ngIf="f['complaint'].touched && f['complaint'].invalid" class="invalid-feedback d-block">
+                  Complaint details are required.
+                </div>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" [disabled]="grievanceForm.invalid">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="complaints-container" *ngIf="mycomplaintsVisible">
+    <h2>My Complaints</h2>
+    <table class="complaints-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let complaint of complaints">
+          <td>{{ complaint.student_id }}</td>
+          <td>{{ complaint.email }}</td>
+          <td>{{ complaint.subject }}</td>
+          <td>{{ complaint.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,35 @@
+<div class="not-approved" *ngIf="false">
+<p style="text-align: center; font-size: 70px; font-weight: 900; padding: 0px 50px 0px 50px;">Admit-Card for Student does not approved by Your Teacher.</p>
+<img src="../../assets/images/not-approved.png" alt="" style="margin: 0px 0px 0px 450px;">
+</div>
+<!-- profile-card.component.html -->
+<div class="container">
+  <div class="admit-card">
+    <div class="logo"><img src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px"><span style="font-size: 20px; font-weight: 700;">  Hi-Tech Institute of Engineering and Technology</span></div>
+    <hr>
+    <div class="admit-card-header">
+      <h1 style="font-weight: 800;">Admit Card</h1>
+      <p>Examination: [Your Examination Name]</p>
+    </div>
+    <div class="admit-card-content">
+      <div class="student-details">
+        <p><strong>Name:</strong> {{this.userName}} {{this.userLastName}}</p>
+        <p><strong>Roll Number:</strong> {{this.Roll_No}}</p>
+        <p><strong>Course:</strong> B.Tech</p>
+        <p><strong>Branch:</strong> CSE</p>
+        <p><strong>Semester:</strong> 7th</p>
+      </div>
+      <div class="student-photo">
+        <img style="border-radius: 10px;" [src]="this.profilePicture" alt="Student Photo" height="200px">
+      </div>
+    </div>
+    <div class="admit-card-footer">
+      <p><strong>Signature:</strong> ........................</p>
+      <p><strong>Exam Center:</strong> Hi-Tech Institute of Engineering & Technology</p>
+    </div>
+  </div>
+  
+
+
+</div>
+  

@@ -1,0 +1,37 @@
+
+<div class="navbar">
+  <div style="font-size: 29px; font-weight: 600;"><img style="border-radius: 50%; margin-left: 40px;"
+          src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px">
+      || Hi-Tech Institute of Engineering and Technology</div>
+  <div style="margin-right: 20px; display: flex;"><button
+          style="padding: 5px; border-radius: 5px; border-color: transparent;" (click)="logout()">LogOut</button></div>
+</div>
+<body>
+    <div class="container">
+      <form [formGroup]="noticeForm" (ngSubmit)="onSubmit()" class="notice-form">
+        <h1>Upload Notice</h1>
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input id="title" formControlName="title" class="form-control" placeholder="Enter title" />
+        </div>
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <input id="course" formControlName="course" class="form-control" placeholder="Enter course" />
+        </div>
+        <div class="form-group">
+          <label for="semester">Semester:</label>
+          <input id="semester" formControlName="semester" class="form-control" placeholder="Enter semester" />
+        </div>
+        <div class="form-group">
+          <label for="year">Year:</label>
+          <input id="year" formControlName="year" class="form-control" placeholder="Enter year" />
+        </div>
+        <div class="form-group">
+          <label for="pdf">PDF:</label>
+          <input type="file" id="pdf" (change)="onFileChange($event)" class="file-input" />
+        </div>
+        <button type="submit" class="submit-button">Upload Notice</button>
+        <div *ngIf="message" class="message">{{ message }}</div>
+      </form>
+    </div>
+  </body>

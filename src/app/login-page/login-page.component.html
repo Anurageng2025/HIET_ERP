@@ -1,0 +1,100 @@
+<!-- <div class="login-page">
+    <div class="login-box-wrapper">
+        <div class="login-box">
+            <div class="login-box-header">
+                <h3 style="font-weight: 300;">WELCOME</h3>
+            </div>
+            <div class="formdata">
+            <form [formGroup]="LoginDataForm" >
+               <div class="formField">
+                <label for="email">E-mail :</label></div>
+                <div class="formField">
+                <input type="email" name="email" id="name" placeholder="username or email"></div>
+               <div class="formField">
+                <label for="password">password</label></div>
+                <div class="formField">
+                <input type="password" name="password" id="password" placeholder="Enter password"></div>
+            </form>
+            </div>
+        </div>  
+    </div>
+</div> -->
+<!-- <body>
+    
+<div class="login-container">
+    <h1>Login</h1>
+    <form action="login.php" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <div class="option">
+            <a href="/registration"><p>Registration</p></a>
+            <p style="padding-left: 2vw;">Forget Password</p>
+        </div>
+      
+      
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+</body> -->
+
+
+<body>
+    <div class="navbar">
+        <div style="font-size: 29px; font-weight: 600;">
+            <img style="border-radius: 50%; margin-left: 40px;" src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px">
+            Hi-Tech Institute of Engineering and Technology
+        </div>
+        <div class="navbar-buttons">
+            <a href="./registration" class="register-button"><i class="fas fa-user-plus"></i> New Registration</a>
+        </div>
+    </div>
+
+    <img class="wave" src="../../assets/images/wave.png">
+    <div class="container">
+        <div class="img">
+            <img src="../../assets/images/bg.svg">
+        </div>
+        <div class="login-content">
+            <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+                <img src="../../assets/images/avatar.svg">
+                <h2 class="title">Welcome</h2>
+
+                <!-- Role Selection (Radio Buttons) -->
+                <div class="role-selection">
+                    <div class="radio-buttons" style="display: flex; justify-content: space-around; padding: 15px;">
+                        <label>
+                            <input type="radio" id="role" name="role" formControlName="userrole" value="Student" /> Student
+                        </label>
+                        <label>
+                            <input type="radio" id="role" name="role" formControlName="userrole" value="Teacher" /> Teacher
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <input type="text" class="input" placeholder="Username" formControlName="username">
+                    </div>
+                </div>
+
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <input type="password" class="input" placeholder="Password" formControlName="password">
+                    </div>
+                </div>
+
+                <a href="forgot-password">Forgot Password?</a>
+                <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+    </div>
+</body>
+

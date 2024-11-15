@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="../../assets/images/hitech_Logo.jpeg" alt="Hi-Tech Logo" class="logo">
+            Hi-Tech Institute of Engineering and Technology
+        </div>
+        <div class="navbar-actions">
+            <button class="logout-button" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </div>
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+<table *ngIf="Students.length > 0" class="notice-table">
+  <thead>
+    <tr>
+      <th>Profile Picture</th>
+      <th>Name</th>
+      
+      <th>Course</th>
+      <th>Branch</th>
+      <th>Semester</th>
+      <th>Roll Number</th>
+      <th>Date of Birth</th>
+      <th>Contact No.</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of Students">
+      <td style=""><img src="{{student.profilePictureUrl}}" alt=""></td>
+      <td>{{ student.first_name}}</td>
+      <td>{{ student.course }}</td>
+      <td>{{ student.branch }}</td>
+      <td>{{ student.semester }}</td>
+      <td>{{ student.roll_number }}</td>
+      <td>{{  student.dob | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ student.mobile }}</td>
+      <td><a [href]="student.pdfUrl" target="_blank">Send Mail</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="Students.length === 0">
+  <p>No notices available.</p>
+</div>

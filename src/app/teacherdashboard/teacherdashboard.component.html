@@ -1,0 +1,48 @@
+
+<body>
+    <div class="navbar"><div style="font-size: 29px; font-weight: 600;" ><img style="border-radius: 50%; margin-left: 40px;" src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px"> 
+        || Hi-Tech Institute of Engineering and Technology</div><div style="margin-right: 20px; display: flex;"> <span style="font-size: 21px; margin-right: 5px; padding-top: 5px;">{{this.userName}}</span><img style="margin-right: 30px;  border-radius: 50%; z-index: 5px;" [src]="this.profilePicture" alt="" height="40px" width="45px"> <button (click)="logout()" style="padding: 5px; border-radius: 5px; border-color: transparent;">LogOut</button></div></div>
+    <div class="container">
+        <h2 class="dashboard-header">Hi-tech (Teacher's Portal)</h2>
+        <!-- <p>You may update your email id or mobile no from my profile link.</p> -->
+        <div class="dashboard-boxes">
+            <div class="dashboard-box" (click)="navigateToEditPassword('semester-request')">
+                <div class="icon"><img src="../../assets/images/edit.png" alt="" height="35px"></div>
+                Semester Registration Request
+            </div>
+            <div class="dashboard-box" role="button" (click)="navigateToEditPassword('edit-Password')" >
+                <div class="icon">🔒</div>
+                Edit Student Password
+              </div>
+            <div class="dashboard-box gray" role="button" (click)="navigateToEditPassword('examform')" >
+                <div class="icon">📝</div>
+                <!-- Exam Form Dashboard -->Admit Card Approval
+            </div>
+            
+            <div class="dashboard-box" role="button" (click)="navigateToEditPassword('upload-notice')">
+                <div class="icon"><img src="../../assets/images/mood-board.png" alt="" height="45px"></div>
+               Upload Notice
+            </div>
+            <div class="dashboard-box"  role="button" (click)="navigateToEditPassword('chat')">
+                <div class="icon"><img src="../../assets/images/group.png" alt="" height="45px"></div>
+                Community Chat Room
+            </div>
+            <div class="dashboard-box gray"  role="button" (click)="navigateToEditPassword('student-detail')">
+                 <div class="icon">🔍</div>
+                Students Details
+            </div>
+            <div class="dashboard-box" role="button" (click)="navigateToEditPassword('upload-paper')">
+                <div class="icon">📚</div>
+              Upload Question Paper
+            </div>
+            <div class="dashboard-box"  role="button" (click)="navigateToEditPassword('leave-application')">
+                <div class="icon"><img src="../../assets/images/leave.png" alt="" height="45px"></div>
+                Leave Application Requests
+            </div>
+            <div class="dashboard-box"  role="button" (click)="navigateToEditPassword('grievance')">
+                <div class="icon"><img src="../../assets/images/complain.png" alt="" height="45px" ></div>
+               Students Grievance 
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,163 @@
+/* upload.component.css */
+
+/* Basic reset */
+.navbar {
+    margin-top: 2px;
+
+    border-radius: 15px;
+    width: 99vw;
+    background-color: #161D39;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Space between logo and logout */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .navbar img {
+    border-radius: 50%;
+    margin-right: 10px; /* Adjust spacing from text */
+  }
+  
+  .navbar button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #f8f8f8;
+    color: #161D39;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background-color: #e0e0e0;
+  }
+
+
+
+.upload-container {
+    margin-top: -5.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    background:linear-gradient(to right, #FFD401, #E68A00);
+
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px dashed #007bff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.file-upload-label input {
+    display: none;
+}
+
+.file-upload-label span {
+    color: #007bff;
+    font-size: 16px;
+    margin-left: 10px;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    overflow: hidden; /* Hides overflow text */
+    text-overflow: ellipsis; /* Adds ellipsis for overflow text */
+}
+
+.file-upload-label.file-selected {
+    background-color: #e9f5ff;
+    border-color: #0056b3;
+}
+
+.file-upload-label.file-selected span {
+    color: #0067d5;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label span {
+    font-size: 16px;
+    color: #333;
+}
+
+select, input[type="text"] {
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:enabled {
+    background-color: #0056b3;
+}

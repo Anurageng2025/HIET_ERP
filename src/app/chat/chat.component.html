@@ -1,0 +1,42 @@
+<body>
+  <div class="navbar">
+      <div class="navbar-brand">
+          <img src="../../assets/images/hitech_Logo.jpeg" alt="Hi-Tech Logo" class="logo">
+          Hi-Tech Institute of Engineering and Technology
+      </div>
+      <div class="navbar-actions">
+          <button class="logout-button" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+  </div>
+
+  <!-- Chat component -->
+  <div class="chat-container">
+      <div class="chat-header">
+          <h2>Chat Room</h2>
+      </div>
+
+      <div class="chat-window">
+          <div *ngFor="let message of messages; let i = index">
+              <!-- Display the date when the next day starts -->
+              <div *ngIf="isNewDay(message, messages[i - 1])" class="date-separator">
+                  {{ message.createdAt | date:'fullDate' }}
+              </div>
+
+              <!-- Display the message -->
+              <div class="message" [ngClass]="{ 'outgoing': message.username === username, 'incoming': message.username !== username }">
+                  <div class="message-content">
+                      <p>{{ message.text }}</p>
+                      <span class="message-info">{{ message.username }} • {{ message.createdAt | date:'shortTime' }}</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="chat-input">
+          <input type="text" [(ngModel)]="message" placeholder="Type a message..." (keyup.enter)="sendMessage()" />
+          <button (click)="sendMessage()">
+              <img style="border-radius: 50%; margin-left: 40px;" src="../../assets/images/paper-plane.png" alt="" height="40px" width="40px">
+          </button>
+      </div>
+  </div>
+</body>

@@ -1,0 +1,45 @@
+<div class="navbar">
+  <div style="font-size: 29px; font-weight: 600;"><img style="border-radius: 50%; margin-left: 40px;"
+          src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px">
+      || Hi-Tech Institute of Engineering and Technology</div>
+  <div style="margin-right: 20px; display: flex;"><button
+          style="padding: 5px; border-radius: 5px; border-color: transparent;" (click)="logout()">LogOut</button></div>
+</div>
+<body>
+  
+
+<div class="upload-container">
+  <h1>Upload Your Paper</h1>
+  <form class="upload-form" (ngSubmit)="onSubmit()" #uploadForm="ngForm">
+      <label for="course">
+        <span>Course</span>
+        <select id="course" name="course" [(ngModel)]="course" required>
+            <option value="" disabled>Select Course</option>
+            <option *ngFor="let cou of courses" [value]="cou">{{ cou }}</option>
+        </select>
+    </label>
+      
+      <label for="semester">
+          <span>Semester</span>
+          <select id="semester" name="semester" [(ngModel)]="semester" required>
+              <option value="" disabled>Select Semester</option>
+              <option *ngFor="let sem of semesters" [value]="sem">{{ sem }}</option>
+          </select>
+      </label>
+
+      <label for="year">
+          <span>Year</span>
+          <input type="text" name="year" [(ngModel)]="year" required>
+          
+      </label>
+
+      <label for="fileInput" class="file-upload-label">
+        <input type="file" id="fileInput" name="file" accept=".pdf,.doc,.docx" (change)="onFileChange($event)" />
+        <span>{{ selectedFileName || 'Select a file' }}</span>
+    </label>
+      
+      <!-- <textarea id="description" name="description" placeholder="Add a description (optional)" [(ngModel)]="description"></textarea> -->
+      <button type="submit" [disabled]="!selectedFile">Upload</button>
+  </form>
+</div>
+</body>

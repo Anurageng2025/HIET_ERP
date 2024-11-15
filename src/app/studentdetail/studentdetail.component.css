@@ -1,0 +1,198 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f4f4f9; */
+  }
+
+ /* Base styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #161D39;
+    color: white;
+    padding: 0px 20px;
+    box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+.navbar-brand {
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 29px;
+    font-weight: 600;
+}
+
+.logo {
+    border-radius: 50%;
+    margin-right: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+}
+
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #a64a3f;
+}
+
+.logout-button i {
+    margin-right: 5px;
+}
+
+/* .notice-table th:nth-child(1), .notice-table td:nth-child(1) {
+    width: 60%;
+} */
+
+.notice-table td img:nth-child(1) {
+    height: 45px;
+    width: 50px;
+    border-radius: 50%;
+}
+  
+  /* Error Message Styling */
+  .error {
+    color: #d9534f;
+    background-color: #f9d6d5;
+    padding: 15px;
+    border: 1px solid #d9534f;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  /* Table Styling */
+  .notice-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table Header Styling */
+  .notice-table thead {
+    background-color: #161D39;
+    color: #ffffff;
+  }
+  
+  .notice-table th {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Title Column Width */
+  .title-column {
+    width: 40%; 
+  }
+  
+  /* Table Body Styling */
+  .notice-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .notice-table td {
+    padding: 15px;
+    color: #555;
+    text-align: center;
+  }
+  
+  /* Table Body Title Column Width */
+  .notice-table .title-column {
+    width: 10%; /* Ensure this matches the header */
+  }
+  
+  .notice-table tr:last-child {
+    border-bottom: none;
+  }
+  
+  /* Link Styling */
+  .notice-table a {
+    color: #ffffff;
+    background-color: #0275d8;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .notice-table a:hover {
+    background-color: #161D39;
+  }
+  
+  /* No Notices Available */
+  div {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #777;
+  }
+  
+  
+
+  /* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 24px; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Space between brand and actions */
+    }
+
+    .logo {
+        height: 30px; /* Smaller logo size for mobile */
+        width: 30px;
+    }
+
+    .navbar-actions {
+        width: 100%; /* Full width for actions */
+        justify-content: flex-end; /* Align actions to the right */
+    }
+
+    .logout-button {
+        font-size: 14px; /* Smaller button text on mobile */
+        padding: 6px 10px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 20px; /* Further adjust font size for very small screens */
+    }
+
+    .logo {
+        height: 25px; /* Even smaller logo size */
+        width: 25px;
+    }
+
+    .logout-button {
+        font-size: 12px; /* Smaller button text */
+        padding: 4px 8px; /* Further adjust padding */
+    }
+}

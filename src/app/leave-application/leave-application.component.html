@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+    <div class="navbar">
+        <div class="navbar-brand">
+            <img src="../../assets/images/hitech_Logo.jpeg" alt="Hi-Tech Logo" class="logo">
+            Hi-Tech Institute of Engineering and Technology
+        </div>
+        <div class="navbar-actions">
+            <button class="logout-button" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2 class="form-title">Apply for Leave</h2>
+        <form (ngSubmit)="onSubmit()" #leaveForm="ngForm" class="leave-form" novalidate>
+            <div class="form-group" [ngClass]="{'error': leaveForm.submitted && !leaveRequest.studentName}">
+                <label for="studentName">Student Name <span class="required">*</span></label>
+                <input type="text" id="studentName" name="studentName" [(ngModel)]="leaveRequest.studentName" required #studentName="ngModel">
+                <div *ngIf="leaveForm.submitted && !studentName.valid" class="error-message">Student Name is required.</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'error': leaveForm.submitted && !leaveRequest.teacherEmail}">
+                <label for="teacherEmail">Teacher Email <span class="required">*</span></label>
+                <input type="email" id="teacherEmail" name="teacherEmail" [(ngModel)]="leaveRequest.teacherEmail" required #teacherEmail="ngModel">
+                <div *ngIf="leaveForm.submitted && !teacherEmail.valid" class="error-message">A valid Teacher Email is required.</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'error': leaveForm.submitted && !leaveRequest.startDate}">
+                <label for="startDate">Start Date <span class="required">*</span></label>
+                <input type="date" id="startDate" name="startDate" [(ngModel)]="leaveRequest.startDate" required #startDate="ngModel">
+                <div *ngIf="leaveForm.submitted && !startDate.valid" class="error-message">Start Date is required.</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'error': leaveForm.submitted && !leaveRequest.endDate}">
+                <label for="endDate">End Date <span class="required">*</span></label>
+                <input type="date" id="endDate" name="endDate" [(ngModel)]="leaveRequest.endDate" required #endDate="ngModel">
+                <div *ngIf="leaveForm.submitted && !endDate.valid" class="error-message">End Date is required.</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'error': leaveForm.submitted && !leaveRequest.reason}">
+                <label for="reason">Reason <span class="required">*</span></label>
+                <textarea id="reason" name="reason" [(ngModel)]="leaveRequest.reason" required #reason="ngModel"></textarea>
+                <div *ngIf="leaveForm.submitted && !reason.valid" class="error-message">Reason is required.</div>
+            </div>
+
+            <button type="submit" class="submit-button">Apply for Leave</button>
+        </form>
+    </div>
+</body>

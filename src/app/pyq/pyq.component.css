@@ -1,0 +1,109 @@
+.navbar {
+    margin-top: 2px;
+    margin-left: -20px;
+    border-radius: 15px;
+    width: 99vw;
+    background-color: #161D39;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Space between logo and logout */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .navbar img {
+    border-radius: 50%;
+    margin-right: 10px; /* Adjust spacing from text */
+  }
+  
+  .navbar button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-color: transparent;
+    background-color: #f8f8f8;
+    color: #161D39;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background-color: #e0e0e0;
+  }
+
+  .paper-list {
+    display: flex;
+    /* justify-content: space-between; */
+    margin: 10px;
+    flex-wrap: wrap;
+  }
+
+  .paper-card {
+    display: block;
+    /* width: 300px; */
+  }
+
+  .text-warning {
+    display: flex;
+    justify-content: center;
+  }
+
+  .exam-folder {
+    margin: 20px;
+  }
+  
+  .paper-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .paper-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .paper-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .paper-card .fa-folder {
+    color: #ffcc00; /* Folder icon color */
+  }
+  
+  .paper-card small {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    word-break: break-all;
+    text-align: center;
+  }
+  
+  hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  

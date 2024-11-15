@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<body>
+    <div class="navbar">
+        <div style="font-size: 29px; font-weight: 600;"><img style="border-radius: 50%; margin-left: 40px;"
+                src="../../assets/images/hitech_Logo.jpeg" alt="" height="40px" width="40px">
+            || Hi-Tech Institute of Engineering and Technology</div>
+        <div style="margin-right: 20px; display: flex;"><button
+                style="padding: 5px; border-radius: 5px; border-color: transparent;" (click)="logout()">LogOut</button></div>
+    </div>
+
+<div class="card mt-3">
+    <!-- breadcrumb Area -->
+    <nav aria-label="breadcrumb" class="wpdocs-nav position-relative">
+        <ol class="breadcrumb bg-light" style="border-bottom:1px solid #dee2e6;border-radius: 0; min-height: 40px;">
+
+            {{heading}}  
+        </ol>
+
+        
+                            </nav>
+
+    
+                        
+        
+    <div class="card-body ">
+
+        <!-- Large Icon View Area -->
+        <!-- <div class="row folder_view large_icon_view ">
+                
+                    <div class="col-4 col-md-3 file_wrapper is_dir" style="cursor: pointer;" data-id="5075" data-resource="NTA3NQ==" data-linked="" data-guid="">
+                        <figure class="figure file_view p-0">									
+                            <span class="fa fa-folder text-warning" style="font-size:60px"></span>
+                            <figcaption class="figure-caption text-center" style="font-size:18px">B.Tech</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-4 col-md-3 file_wrapper is_dir" style="cursor: pointer;" data-id="5074" data-resource="NTA3NA==" data-linked="" data-guid="">
+                        <figure class="figure file_view p-0">									
+                            <span class="fa fa-folder text-warning" style="font-size:60px"></span>
+                            <figcaption class="figure-caption text-center" style="font-size:18px">BCA</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="col-4 col-md-3 file_wrapper is_dir" style="cursor: pointer;" data-id="13814" data-resource="MTM4MTQ=" data-linked="" data-guid="">
+                        <figure class="figure file_view p-0">									
+                            <span class="fa fa-folder text-warning" style="font-size:60px"></span>
+                            <figcaption class="figure-caption text-center" style="font-size:18px">MCA</figcaption>
+                        </figure>
+                    </div>
+
+
+        </div> -->
+
+        <!-- List View Area -->
+        <!-- <div class="row folder_view list_view d-none">
+                
+                    <div class="col-12 file_wrapper is_dir" style="cursor: pointer;" data-id="5075" data-resource="NTA3NQ==" data-linked="" data-guid="">
+                        <figure class="figure file_view p-2">
+                            <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                            <small class="text-center">B.Pharm</small>
+                        </figure>
+                    </div>
+                    
+                    <div class="col-12 file_wrapper is_dir" style="cursor: pointer;" data-id="5074" data-resource="NTA3NA==" data-linked="" data-guid="">
+                        <figure class="figure file_view p-2">
+                            <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                            <small class="text-center">B.Tech</small>
+                        </figure>
+                    </div>
+                    
+                    <div class="col-12 file_wrapper is_dir" style="cursor: pointer;" data-id="13814" data-resource="MTM4MTQ=" data-linked="" data-guid="">
+                        <figure class="figure file_view p-2">
+                            <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                            <small class="text-center">MCA</small>
+                        </figure>
+                    </div>
+                    
+
+        </div> -->
+                
+        <!-- Detail View Area -->
+        <!-- <div class="row folder_view detail_view mt-0 d-none">
+            <div class="table-responsive" style="zoom:70%">
+                <table class="table">
+                    <thead class="thead">
+                        <tr>
+                            <th>Name </th>
+    
+                        </tr>
+                    </thead>
+                                                                <tbody><tr title="5075" class="file_wrapper file_view is_dir" style="cursor: pointer;" data-id="5075" data-resource="NTA3NQ==" data-linked="" data-guid="">
+                                <td>
+                                    <figure class="figure ">
+                                        <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                                        <small class="text-center mb-1">B.Pharm</small>
+                                    </figure>
+                                </td>
+                                
+                                            </tr>
+                                                                    <tr title="5074" class="file_wrapper file_view is_dir" style="cursor: pointer;" data-id="5074" data-resource="NTA3NA==" data-linked="" data-guid="">
+                                <td>
+                                    <figure class="figure " (click)="options('B.tech')">
+                                        <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                                        <small class="text-center mb-1" (click)="options('B.tech')">B.Tech</small>
+                                    </figure>
+                                </td>
+                                
+                                            </tr>
+                                                                    <tr title="13814" class="file_wrapper file_view is_dir" style="cursor: pointer;" data-id="13814" data-resource="MTM4MTQ=" data-linked="" data-guid="">
+                                <td>
+                                    <figure class="figure ">
+                                        <span class="fa fa-folder text-warning" style="font-size:25px"></span>
+                                        <small class="text-center mb-1">MCA</small>
+                                    </figure>
+                                </td>
+                                
+                                            </tr>
+                                                        </tbody></table>
+            </div>
+        </div> -->
+
+    </div>
+   
+</div>
+
+<div class="paper-list" style="padding: 20px;" *ngIf="!slectedCourse">
+    <div *ngFor="let course of courses" class="paper-card"  (click)="options(course)" role="button">
+      <!-- <h3 (click)="downloadPDF(paper.name)">{{ paper.name }}</h3> -->
+      <span class="fa fa-folder text-warning" style="font-size:100px; display: block; width: 250px; padding-left: 30px;" role="button"></span>
+      <small class="text-center mb-1" > <p style="text-align: center;">{{ course}}</p></small>
+    </div>
+  </div>
+
+  <div class="paper-list" style="padding: 20px;" *ngIf="slectedCourse && !selectedSemester">
+    <div *ngFor="let semester of semesters" class="paper-card"  (click)="options(semester.semester)" role="button">
+      <!-- <h3 (click)="downloadPDF(paper.name)">{{ paper.name }}</h3> -->
+      <span class="fa fa-folder text-warning" style="font-size:100px; display: block; width: 250px; padding-left: 30px;" role="button"></span>
+      <small class="text-center mb-1" ><p style="text-align: center;">{{ semester.semester}}</p></small>
+    </div>
+  </div>
+
+  <div class="paper-list" style="padding: 20px;" *ngIf="slectedCourse && selectedSemester && !slectedYear">
+    <div *ngFor="let year of years" class="paper-card"  (click)="options(year.year)" role="button">
+      <!-- <h3 (click)="downloadPDF(paper.name)">{{ paper.name }}</h3> -->
+      <span class="fa fa-folder text-warning" style="font-size:100px; display: block; width: 250px; padding-left: 30px;" role="button"></span>
+      <small class="text-center mb-1" ><p style="text-align: center;">{{ year.year}}</p></small>
+    </div>
+  </div>
+
+<div class="exam-folder" *ngIf="slectedCourse && selectedSemester && slectedYear">
+    <hr>
+    <h2>Previous Year Exam Papers</h2>
+    <hr>
+    <div class="paper-list" style="padding: 20px;">
+      <div *ngFor="let paper of pdfFiles" class="paper-card"  (click)="downloadPDF(paper)" role="button">
+        <!-- <h3 (click)="downloadPDF(paper.name)">{{ paper.name }}</h3> -->
+        <span class="fa fa-folder text-warning" style="font-size:100px; display: block; width: 250px; padding-left: 30px;" role="button"></span>
+        <small class="text-center mb-1" ><p style="text-align: center;">{{ paper}}</p></small>
+      </div>
+    </div>
+    <!-- <button >Upload New Paper</button> -->
+    <hr>
+  </div>
+  
+  
